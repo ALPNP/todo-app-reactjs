@@ -1,25 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AppHeader from './components/AppHeader';
-import SearchPanel from './components/SearchPanel';
-import TodoList from './components/TodoList';
+// Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-const App = () => {
+//Font Awesome
+import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/js/all';
 
-    const todoData = [
-        { label: 'Drink Cofee', important: false, id: 1 }, 
-        { label: 'Create React App', important: true, id: 2 },
-        { label: 'Eat Lunch', important: false, id: 3 }
-    ];
-
-    return (
-        <div>
-            <AppHeader />
-            <SearchPanel />
-            <TodoList todoData={todoData}/>
-        </div>
-    )
-}
+import App from './components/App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
