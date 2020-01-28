@@ -1,0 +1,5 @@
+.search-panel {
+    flex-grow: 1;
+    padding-right: .25rem;
+    min-width: 80px;
+}

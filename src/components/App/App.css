@@ -1,0 +1,12 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.app-actions {
+    display: flex;
+    margin-bottom: .50rem;
+}
