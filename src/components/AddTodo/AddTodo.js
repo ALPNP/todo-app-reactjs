@@ -3,23 +3,34 @@ import './AddTodo.css';
 
 class AddTodo extends Component {
 
-    doAddTodo = () => {
-        this.props.addTodo(this.input.value);
-        this.input.value = '';
+    state = {
+        value: ''
+    }
+
+    onLabelChange = (e) => {
+        this.setState({ value: e.target.value });
+    }
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.props.addTodo(this.state.value);
+        this.setState({ value: '' });
     }
 
     render() {
         return (
-            <div className='add-todo'>
-                <input 
+            <form className='add-todo' onSubmit={this.onSubmit}>
+                <input
                     ref={ref => this.input = ref}
                     className='form-control'
                     placeholder='type new todo'
+                    value={this.state.value}
+                    onChange={this.onLabelChange}
                 />
-                <button type='button' onClick={this.doAddTodo} className='btn btn-sm btn-success add-todo-button'>
+                <button type='submit' className='btn btn-sm btn-success add-todo-button'>
                     <i className="fas fa-plus fa-fw"></i>
                 </button>
-            </div>
+            </form>
         )
     }
 }

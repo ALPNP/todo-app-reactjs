@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './ItemStatusFilter.css';
 
-class ItemStatusFilter extends Component {
-    render() {
-        return (
-            <div className="btn-group item-status-filter" role="group" aria-label="Search filter">
-                <button type="button" className="btn btn-primary">All</button>
-                <button type="button" className="btn btn-outline-secondary">Active</button>
-                <button type="button" className="btn btn-outline-secondary">Done</button>
-            </div>
-        )
-    }
+const ItemStatusFilter = (props) => {
+    const { filter, filterKey } = props;
+    return (
+        <div className="btn-group item-status-filter" role="group" aria-label="Search filter">
+            <button type="button" onClick={() => filter('all')} className={`btn ${(filterKey === 'all') ? 'btn-primary' : 'btn-outline-secondary'}`}>All</button>
+            <button type="button" onClick={() => filter('active')} className={`btn ${(filterKey === 'active') ? 'btn-primary' : 'btn-outline-secondary'}`}>Active</button>
+            <button type="button" onClick={() => filter('done')} className={`btn ${(filterKey === 'done') ? 'btn-primary' : 'btn-outline-secondary'}`}>Done</button>
+        </div>
+    )
 }
 
 export default ItemStatusFilter;
